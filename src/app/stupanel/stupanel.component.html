@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Float four columns side by side */
+    .column {
+      float: left;
+      width: 25%;
+      padding: 0 10px;
+    }
+
+    /* Remove extra left and right margins, due to padding */
+    .row {
+      margin: 0 -5px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+
+    /* Style the counter cards */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row" >
+    <ng-container *ngFor="let i of displayUser">
+      <div class="column " style="margin: 20px;">
+        <div class="card" (click)="usingcarddata(i)">
+          <h3>Student data</h3>
+          <p>{{i.fname}}</p>
+          <p>Some text</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <!-- <div *ngIf="Isshowmodel" style="background-color:rgba(0, 0, 0, 0.5); height: 100vh; width: 100%; position: fixed;top: 0%; left: 0%; display: grid; justify-content: center; align-items: center;">
+  <div class="card" style="height: 30%; width: 500px; " >
+    <div>
+      <h3>Student data</h3>
+      <p>{{studentdata.fname}}</p>
+      <p>Some text</p>
+    </div>
+    <button type="button" (click)="Isshowmodel=!Isshowmodel">close</button>
+  </div>
+  </div> -->
+</body>
+
+</html>

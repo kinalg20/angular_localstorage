@@ -1,0 +1,23 @@
+<p style="text-align: right;">
+    <button (click)="enable()"> Add new student</button>
+  </p>
+
+
+  <app-stupanel></app-stupanel>
+
+ <div [hidden] = "isenabled">
+    <div style="text-align: center; width: 100%; min-height: 50vh; display: grid ; justify-content: center; align-items: center;">
+      <form style="border: 1px solid #dedede; border-radius: 20px; padding: 20px; width: fit-content;" #signupForm='ngForm' (ngSubmit)="registerUser(signupForm)">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" ngModel value=""><br><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" ngModel value=""><br><br>
+        <label for="Course">Course Details:</label><br>
+        <input type="text" id="Course" name="Course" ngModel value=""><br><br>
+        <label for="Price">Price:</label><br>
+        <input type="text" id="Price" name="Price" ngModel value=""><br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+

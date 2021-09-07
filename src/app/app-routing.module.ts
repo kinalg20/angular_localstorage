@@ -5,7 +5,7 @@ import { StupanelComponent } from './stupanel/stupanel.component';
 import {ResultComponent} from './result/result.component';
 const routes: Routes = [
     { path: 'form', component: FormComponent , pathMatch: 'full'},
-    { path: 'studentpanel', component: StupanelComponent, pathMatch: 'full' },
+    { path: '', component: StupanelComponent, pathMatch: 'full' },
     { path: 'result', component: ResultComponent, pathMatch: 'full' }
 ];
 

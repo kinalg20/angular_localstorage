@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-stupanel',
@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./stupanel.component.scss']
 })
 export class StupanelComponent implements OnInit {
-
+  @Output() myCountEmit = new EventEmitter(); // output Emitter variable
   displayUser = [] as any;
-  studentdata :any
   data :any;
-  Isshowmodel:boolean=false;
+
+  Isvisible:boolean=false
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -28,11 +28,11 @@ export class StupanelComponent implements OnInit {
   }
 
   usingcarddata(dataparams:any) {
+    this.Isvisible = true;
     this.data=dataparams;
-    this.router.navigate(['/app-result'] , this.data);
-    this.studentdata=dataparams;
-    this.Isshowmodel=true;
-    // console.log("you clicked on card",dataparams);
+    console.log(this.data)
+    this.myCountEmit.emit({'displayform':this.data, 'component' : 'stupanel component'});
+    this.router.navigate(['/result']);
   }
 }
 

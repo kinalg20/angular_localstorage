@@ -53,7 +53,7 @@
 </head>
 
 <body>
-  <div class="row" >
+  <div class="row" [hidden]="Isvisible">
     <ng-container *ngFor="let i of displayUser">
       <div class="column " style="margin: 20px;">
         <div class="card" (click)="usingcarddata(i)">
@@ -74,6 +74,7 @@
     <button type="button" (click)="Isshowmodel=!Isshowmodel">close</button>
   </div>
   </div> -->
+  <app-form></app-form>
 </body>
 
 </html>

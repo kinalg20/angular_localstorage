@@ -1,1 +1,11 @@
-<p>result works!</p>
+<!-- <p>result works!</p> -->
+<app-stupanel (myCountEmit)='clickEvent($event)'  [hidden]="Isvisible" ></app-stupanel>
+
+<div style="text-align: center;" [hidden]="Isshowmodel">
+    <div>
+      <h3>Student data</h3>
+      <p>{{student_data?.displayform?.fname}}</p>
+      <p>Some text</p>
+    </div>
+</div>
+
